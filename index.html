@@ -37,32 +37,36 @@
         .tiro-bangla-regular {
             font-family: "Tiro Bangla", serif;
         }
+
+        html{
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
 <body class="poppins-regular">
 
     <!-- nav section -->
-    <section class="backdrop-blur-md backdrop-brightness-150 shadow-xl">
-        <nav class="w-10/12 mx-auto py-6 flex justify-between ">
-            <div class="flex items-center">
+    <section id="navbar" class="backdrop-blur-md backdrop-brightness-150 shadow-xl fixed top-0 left-0 w-full ">
+        <nav class="w-10/12 mx-auto py-6 flex justify-between  ">
+            <a href="#headerSection"><div class="flex items-center">
                 <h2 class="poppins-regular font-semibold">English</h2>
                 <img src="assets/logo.png" alt="English Janala logo">
                 <h2 class="tiro-bangla-regular font-semibold">জানালা</h2>
-            </div>
+            </div></a>
             <div class="space-x-4">
-                <button class="btn  btn-outline btn-primary"> <img src="assets/fa-circle-question.png"
-                        alt="fa-circle-question"> FAQ</button>
-                <button class="btn  btn-outline btn-primary"> <img src="assets/fa-book-open.png"
-                        alt="fa-book-open.png">Learn</button>
-                <button class="btn  btn-outline btn-primary"> <img src="assets/fa-arrow-right-from-bracket.png"
+                <a href="#questionsSection"><button class="btn  btn-outline btn-primary"> <img src="assets/fa-circle-question.png"
+                    alt="fa-circle-question"> FAQ</button></a>
+                <a href="#learnSection"><button class="btn  btn-outline btn-primary"> <img src="assets/fa-book-open.png"
+                    alt="fa-book-open.png">Learn</button></a>
+                <button id="logout-btn" class="btn  btn-outline btn-primary"> <img src="assets/fa-arrow-right-from-bracket.png"
                         alt="fa-arrow-right-from-bracket">Logout</button>
             </div>
         </nav>
     </section>
 
     <!-- header section -->
-    <header class="w-10/12 mx-auto py-24 flex justify-between items-center">
+    <header id="headerSection" class="w-10/12 mx-auto py-24 flex justify-between items-center">
 
         <div class="space-y-6">
             <h1 class="font-bold text-5xl "><span class="text-[#00bcff] ">English</span> is Easy!!</h1>
@@ -70,19 +74,36 @@
                 যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য
                 একটি Level এ</p>
             <fieldset class="fieldset space-y-2 ">
-                <input type="text" class="input" placeholder="Enter Your Name" />
-                <input type="number" class="input" placeholder="......." />
+                <input id="enterName" type="text" class="input" placeholder="Enter Your Name" />
+                <input id="enterPass" type="number" class="input" placeholder="......." />
             </fieldset>
-            <button class="btn btn-primary">Get Started</button>
+            <button id="getStart-btn" class="btn btn-primary">Get Started</button>
         </div>
 
         <div><img src="assets/hero-student.png" alt=""></div>
     </header>
 
     <main>
-        <!-- Frequently Asked Questions section -->
+        <!-- Let's Learn Vocabularies section -->
 
-        <section class="w-10/12 mx-auto ">
+        <section id="learnSection" class="w-10/12 mx-auto text-center pt-40 mb-52">
+            <h1 class="font-bold text-4xl text-center mb-4"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+            <div id="learnBtn" class="space-x-3 mt-6 flex justify-center">
+
+                <!-- <button class="btn btn-outline btn-primary"><img src="assets/fa-book-open.png" alt="book-open"> Lesson -1</button> -->
+                
+            </div>
+
+            <div class=" mt-8 mb-32 rounded-xl py-8 space-y-4 bg-[#F8F8F8] ">
+                <p class="text-[#79716B] text-sm hind-siliguri-regular">আপনি এখনো কোন Lesson Select করেননি</p>
+                <h1 class="text-3xl hind-siliguri-regular font-semibold">একটি Lesson Select করুন।</h1>
+            </div>
+        </section>
+
+
+
+        <!-- Frequently Asked Questions section -->
+        <section id="questionsSection" class="w-10/12 mx-auto pt-40 ">
             <h1 class="text-4xl font-bold pb-20 text-center"><span class="text-[#00bcff]">Frequently</span> Asked
                 Questions</h1>
 
@@ -119,9 +140,10 @@
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="border-t-2 mt-14 border-red-200 ">
+    <footer id="footerSection" class="border-t-2 mt-14 border-red-200 ">
         <section class="w-10/12 mx-auto py-20 flex justify-between items-end">
             <div class="space-y-3">
                 <div class="flex items-center">
@@ -151,6 +173,7 @@
     </footer>
 
     <script src="script/index.js"></script>
+     <script src="script/addapi.js"></script>
 </body>
 
 </html>
