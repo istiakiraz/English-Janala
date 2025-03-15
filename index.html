@@ -47,7 +47,7 @@
 <body class="poppins-regular">
 
     <!-- nav section -->
-    <section id="navbar" class="backdrop-blur-md backdrop-brightness-150 shadow-xl fixed top-0 left-0 w-full ">
+    <section id="navbar" class="backdrop-blur-md backdrop-brightness-150 shadow-xl fixed top-0 left-0 w-full z-1000 ">
         <nav class="w-10/12 mx-auto py-6 flex justify-between  ">
             <a href="#headerSection">
                 <div class="flex items-center">
@@ -97,17 +97,23 @@
 
             </div>
 
-            <div class=" mt-8 mb-32 rounded-xl py-8  bg-[#F8F8F8] px-8 grid grid-cols-3 space-x-4 space-y-4 ">
+            <div id="wordCardBox" class=" mt-8 mb-32 rounded-xl py-8  bg-[#F8F8F8] px-8 grid grid-cols-3 space-x-4 space-y-4 ">
 
-                <div class="space-y-4 col-span-full">
+                <div id="spiner" class="spiner col-span-full hidden">
+                    <span class="loading loading-ring loading-lg"></span>
+                    <span class="loading loading-ring loading-lg"></span>
+                    <span class="loading loading-ring loading-lg"></span>
+                </div>
+
+                <div id="errorText" class="space-y-4 col-span-full">
                     <p class="text-[#79716B] text-sm hind-siliguri-regular">আপনি এখনো কোন Lesson Select করেননি।</p>
                     <h1 class="text-3xl hind-siliguri-regular font-semibold">একটি Lesson Select করুন।</h1>
                 </div>
 
-                <div class="p-16 bg-white rounded-xl space-y-8 h-[20rem]">
+                <!-- <div class="p-16 bg-white rounded-xl space-y-8 h-[20rem]">
                     <div class="space-y-3">
                         <h1 class="font-bold text-2xl">Eager</h1>
-                        <p class="text-xl">Meaning /Pronounciation</p>
+                        <p class="text-xl">Meaning /Pronunciation</p>
                         <h2 class="hind-siliguri-regular text-gray-500 text-2xl font-bold">"আগ্রহী / ইগার"</h2>
                     </div>
 
@@ -117,43 +123,15 @@
                         </div>
                         <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="p-16 bg-white rounded-xl space-y-8 h-[20rem]">
-                    <div class="space-y-3">
-                        <h1 class="font-bold text-2xl">Eager</h1>
-                        <p class="text-xl">Meaning /Pronounciation</p>
-                        <h2 class="hind-siliguri-regular text-gray-500 text-2xl font-bold">"আগ্রহী / ইগার"</h2>
-                    </div>
+                
 
-                    <div class="flex justify-between">
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl">
-                            <img src="assets/info.png" alt="info icon">
-                        </div>
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
-                    </div>
-                </div>
-
-                <div class="p-16 bg-white rounded-xl space-y-8 h-[20rem]">
-                    <div class="space-y-3">
-                        <h1 class="font-bold text-2xl">Eager</h1>
-                        <p class="text-xl">Meaning /Pronounciation</p>
-                        <h2 class="hind-siliguri-regular text-gray-500 text-2xl font-bold">"আগ্রহী / ইগার"</h2>
-                    </div>
-
-                    <div class="flex justify-between">
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl">
-                            <img src="assets/info.png" alt="info icon">
-                        </div>
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
-                    </div>
-                </div>
-
-                <div class="space-y-4 col-span-full items-center flex flex-col ">
+                <!-- <div class="space-y-4 col-span-full items-center flex flex-col ">
                     <img src="assets/alert-error.png" alt="">
                     <p class="text-[#79716B] text-sm hind-siliguri-regular">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                     <h1 class="text-3xl hind-siliguri-regular font-semibold">নেক্সট Lesson এ যান</h1>
-                </div>
+                </div> -->
 
                 
 
@@ -192,6 +170,7 @@
                     <div class="collapse-content text-sm text-gray-500 ">Click the "Sign Up" button in the top right
                         corner and follow the registration process.</div>
                 </div>
+
                 <div class="collapse collapse-plus bg-gray-100 border border-base-300">
                     <input type="radio" name="my-accordion-3" checked="checked" />
                     <div class="collapse-title font-semibold">How do I create an account?</div>
