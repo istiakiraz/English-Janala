@@ -59,7 +59,7 @@ const displayWordDetails = (wordDetails) => {
     
     <div id="modal-details" class="modal-box">
                     <div class="py-5 px-3 border-2 border-blue-100  rounded-xl">
-                        <h1 class="font-bold text-3xl mb-7 " >${wordDetails.word} (:${wordDetails.pronunciation})</h1>
+                        <h1 class="font-bold text-3xl mb-7 flex items-center whitespace-nowrap " >${wordDetails.word} (<img class="size-8" src="assets/mic.png" alt="mic logo">:${wordDetails.pronunciation})</h1>
                         <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
                         <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning == null ? `অর্থ পাওয়া যায়নি` : `${wordDetails.meaning}`} </p>
                         <h4 class="font-bold text-xl mb-2">Example</h4>
@@ -135,7 +135,9 @@ const displayButton = (button) => {
         const categoryDiv = document.createElement('div')
 
         categoryDiv.innerHTML = `
-        <button id="btn-${btn.level_no}" onclick="loadWord('${btn.level_no}')" class="btn btn-outline btn-primary"><img src="assets/fa-book-open.png" alt="book-open"> Lesson - ${btn.level_no}</button>
+        <button id="btn-${btn.level_no}" onclick="loadWord('${btn.level_no}')" class="btn btn-outline btn-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 hover:text-white">
+                    <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
+                  </svg> Lesson - ${btn.level_no}</button>
         `
         addButton.appendChild(categoryDiv)
 
