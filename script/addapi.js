@@ -48,14 +48,14 @@ const displayWordDetails = (wordDetails) =>{
                     <div class="py-5 px-3 border-2 border-blue-100  rounded-xl">
                         <h1 class="font-bold text-3xl mb-7 " >${wordDetails.word} (:${wordDetails.pronunciation})</h1>
                         <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
-                        <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning} </p>
+                        <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning == null ? `অর্থ পাওয়া যায়নি` : `${wordDetails.meaning}` } </p>
                         <h4 class="font-bold text-xl mb-2">Example</h4>
                         <p class="mb-7" >${wordDetails.sentence}</p>
                         <h4 class="hind-siliguri-regular font-bold mb-2" >সমার্থক শব্দ গুলো</h4>
                         <div>
-                            <button class="btn bg-[#EDF7FF] text-gray-500 ">${wordDetails.synonyms[0]}</button>
-                            <button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[1]}</button>
-                            <button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[2]}</button>
+                        ${wordDetails.synonyms[0] ? `<button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[0]}</button>` : ""}
+                            ${wordDetails.synonyms[1] ? `<button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[1]}</button>` : ""}
+                            ${wordDetails.synonyms[2] ? `<button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[2]}</button>` : ""}
                         </div>
                     </div>
                     <div>
@@ -64,11 +64,7 @@ const displayWordDetails = (wordDetails) =>{
                         </form>
                     </div>
                 </div>
-    
     `
-
-
-
 }
 
 
@@ -100,7 +96,7 @@ const displayWord = (words) => {
                     <div class="space-y-3">
                         <h1 class="font-bold text-2xl">${word.word}</h1>
                         <p class="text-xl">Meaning /Pronunciation</p>
-                        <h2 class="hind-siliguri-regular text-gray-500 text-2xl font-bold">"${word.meaning}/ ${word.pronunciation}"</h2>
+                        <h2 class="hind-siliguri-regular text-gray-500 text-2xl font-bold">"${word.meaning == null ? `অর্থ নেই` : `${word.meaning}`}/ ${word.pronunciation}"</h2>
                     </div>
 
                     <div class="flex justify-between">
@@ -136,7 +132,6 @@ const displayButton = (button) => {
     }
     
 }
-
 
 loadButton()
 

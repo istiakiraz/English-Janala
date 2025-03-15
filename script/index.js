@@ -1,6 +1,5 @@
 document.getElementById('navbar').style.display = "none"
 document.getElementById('questionsSection').style.display = "none"
-document.getElementById('footerSection').style.display = "none"
 document.getElementById('learnSection').style.display = "none"
 
 document.getElementById('getStart-btn').addEventListener("click", function (event) {
@@ -38,8 +37,6 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
     document.getElementById('navbar').style.display = "none"
 
     document.getElementById('questionsSection').style.display = "none"
-
-    document.getElementById('footerSection').style.display = "none"
     
     document.getElementById('learnSection').style.display = "none"
 
