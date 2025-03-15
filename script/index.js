@@ -10,28 +10,35 @@ document.getElementById('getStart-btn').addEventListener("click", function (even
     const enterPassword = document.getElementById('enterPass').value;
     const convertPassword = parseInt(enterPassword);
 
+    if(enterName !== "" ){
+        if (convertPassword === 123456) {
 
-    if (enterName !== "" && convertPassword === 123456) {
+            document.getElementById('headerSection').style.display = "none"
+    
+            document.getElementById('navbar').style.display = "block"
+    
+            document.getElementById('questionsSection').style.display = "block"
+    
+            document.getElementById('footerSection').style.display = "block"
+    
+            document.getElementById('learnSection').style.display = "block"
+    
+             Swal.fire({
+                title: "অভিনন্দন",
+                text: "চলুন আজ নতুন কিছু শেখা যাক",
+                icon: "success"
+              });
+        }
+        else {
+            alert("Invalid Password");
+        }
 
-        document.getElementById('headerSection').style.display = "none"
-
-        document.getElementById('navbar').style.display = "block"
-
-        document.getElementById('questionsSection').style.display = "block"
-
-        document.getElementById('footerSection').style.display = "block"
-
-        document.getElementById('learnSection').style.display = "block"
-
-         Swal.fire({
-            title: "অভিনন্দন",
-            text: "চলুন আজ নতুন কিছু শেখা যাক",
-            icon: "success"
-          });
     }
-    else {
-        alert("Invalid Name or Password");
+
+    else{
+        alert("Fill Name Box")
     }
+    
 
 })
 
