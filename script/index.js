@@ -22,6 +22,12 @@ document.getElementById('getStart-btn').addEventListener("click", function (even
         document.getElementById('footerSection').style.display = "block"
 
         document.getElementById('learnSection').style.display = "block"
+
+         Swal.fire({
+            title: "অভিনন্দন",
+            text: "চলুন আজ নতুন কিছু শেখা যাক",
+            icon: "success"
+          });
     }
     else {
         alert("Invalid Name or Password");

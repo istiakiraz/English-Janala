@@ -1,11 +1,20 @@
-const showLoader = ()=>{
+const showLoader = () => {
 
     document.getElementById('spiner').classList.remove('hidden')
-    document.getElementById('wordCardBox').classList.add('hidden') 
+    document.getElementById('wordCardBox').classList.add('hidden')
 }
-const hideLoader = ()=>{
+const hideLoader = () => {
     document.getElementById('spiner').classList.add('hidden')
-    document.getElementById('wordCardBox').classList.remove('hidden') 
+    document.getElementById('wordCardBox').classList.remove('hidden')
+}
+
+const removeActiveClass = () => {
+    const activeBtn = document.getElementsByClassName("active")
+
+    for (let btn of activeBtn) {
+        btn.classList.remove('active')
+    }
+
 }
 
 const loadButton = () => {
@@ -22,33 +31,37 @@ const loadWord = (wordCard) => {
     showLoader()
     fetch(`https://openapi.programming-hero.com/api/level/${wordCard}`)
         .then(res => res.json())
-        .then(data => displayWord(data.data))
+        .then(data => {
+
+            removeActiveClass()
+            const clickBtn = document.getElementById(`btn-${wordCard}`)
+            clickBtn.classList.add('active')
+
+            displayWord(data.data)
+        })
 }
 
-const wordDetails = (wordId) =>{
+const wordDetails = (wordId) => {
 
     fetch(`https://openapi.programming-hero.com/api/word/${wordId}`)
-    .then(res => res.json())
-    .then(data=> displayWordDetails(data.data))
+        .then(res => res.json())
+        .then(data => displayWordDetails(data.data))
 }
 
 
+const displayWordDetails = (wordDetails) => {
 
-const displayWordDetails = (wordDetails) =>{
-    // console.log(wordDetails.meaning.length);
-
-    
     document.getElementById('word_details').showModal()
 
-    const detailsContainer= document.getElementById('modal-details')
+    const detailsContainer = document.getElementById('modal-details')
 
-    detailsContainer.innerHTML =`
+    detailsContainer.innerHTML = `
     
     <div id="modal-details" class="modal-box">
                     <div class="py-5 px-3 border-2 border-blue-100  rounded-xl">
                         <h1 class="font-bold text-3xl mb-7 " >${wordDetails.word} (:${wordDetails.pronunciation})</h1>
                         <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
-                        <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning == null ? `অর্থ পাওয়া যায়নি` : `${wordDetails.meaning}` } </p>
+                        <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning == null ? `অর্থ পাওয়া যায়নি` : `${wordDetails.meaning}`} </p>
                         <h4 class="font-bold text-xl mb-2">Example</h4>
                         <p class="mb-7" >${wordDetails.sentence}</p>
                         <h4 class="hind-siliguri-regular font-bold mb-2" >সমার্থক শব্দ গুলো</h4>
@@ -67,23 +80,22 @@ const displayWordDetails = (wordDetails) =>{
     `
 }
 
-
 const displayWord = (words) => {
 
     const wordBox = document.getElementById('wordCardBox')
-        wordBox.innerHTML = ""
+    wordBox.innerHTML = ""
 
-        if (words.length === 0) {
-            wordBox.innerHTML = `
+    if (words.length === 0) {
+        wordBox.innerHTML = `
             <div class="space-y-4 col-span-full items-center flex flex-col ">
                         <img src="assets/alert-error.png" alt="">
                         <p class="text-[#79716B] text-sm hind-siliguri-regular">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                         <h1 class="text-3xl hind-siliguri-regular font-semibold">নেক্সট Lesson এ যান</h1>
                     </div>
             `
-            hideLoader()
-            return;
-        }
+        hideLoader()
+        return;
+    }
 
 
     words.forEach(word => {
@@ -103,7 +115,7 @@ const displayWord = (words) => {
                         <div onclick=wordDetails(${word.id}) class="p-3 w-10 h-10 bg-blue-100 rounded-xl">
                             <img src="assets/info.png" alt="info icon">
                         </div>
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
+                        <div onclick=pronounceWord("${word.word}") class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
                     </div>
                 </div>
 
@@ -115,10 +127,7 @@ const displayWord = (words) => {
 
 }
 
-
-
 const displayButton = (button) => {
-
 
     const addButton = document.getElementById('learnBtn')
 
@@ -126,11 +135,18 @@ const displayButton = (button) => {
         const categoryDiv = document.createElement('div')
 
         categoryDiv.innerHTML = `
-        <button onclick="loadWord('${btn.level_no}')" class="btn btn-outline btn-primary"><img src="assets/fa-book-open.png" alt="book-open"> Lesson - ${btn.level_no}</button>
+        <button id="btn-${btn.level_no}" onclick="loadWord('${btn.level_no}')" class="btn btn-outline btn-primary"><img src="assets/fa-book-open.png" alt="book-open"> Lesson - ${btn.level_no}</button>
         `
         addButton.appendChild(categoryDiv)
+
     }
-    
+
+}
+
+function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    window.speechSynthesis.speak(utterance);
 }
 
 loadButton()

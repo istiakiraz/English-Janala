@@ -25,6 +25,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         .hind-siliguri-regular {
             font-family: "Hind Siliguri", sans-serif;
@@ -41,6 +44,13 @@
         html {
             scroll-behavior: smooth;
         }
+
+        .active{
+            background: #3b25c1;
+            color: white;
+
+        }
+
     </style>
 </head>
 
@@ -88,7 +98,7 @@
     <main>
         <!-- Let's Learn Vocabularies section -->
 
-        <section id="learnSection" class="w-10/12 mx-auto text-center pt-40 mb-52">
+        <section id="learnSection" class="w-10/12 mx-auto text-center mt-20 pt-40 mb-52">
             <h1 class="font-bold text-4xl text-center mb-4"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
             </h1>
             <div id="learnBtn" class="space-x-3 mt-6 flex justify-center">
@@ -112,32 +122,6 @@
                     <p class="text-[#79716B] text-sm hind-siliguri-regular">আপনি এখনো কোন Lesson Select করেননি।</p>
                     <h1 class="text-3xl hind-siliguri-regular font-semibold">একটি Lesson Select করুন।</h1>
                 </div>
-
-                <!-- <div class="p-16 bg-white rounded-xl space-y-8 h-[20rem]">
-                    <div class="space-y-3">
-                        <h1 class="font-bold text-2xl">Eager</h1>
-                        <p class="text-xl">Meaning /Pronunciation</p>
-                        <h2 class="hind-siliguri-regular text-gray-500 text-2xl font-bold">"আগ্রহী / ইগার"</h2>
-                    </div>
-
-                    <div class="flex justify-between">
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl">
-                            <img src="assets/info.png" alt="info icon">
-                        </div>
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
-                    </div>
-                </div> -->
-
-
-
-                <!-- <div class="space-y-4 col-span-full items-center flex flex-col ">
-                    <img src="assets/alert-error.png" alt="">
-                    <p class="text-[#79716B] text-sm hind-siliguri-regular">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-                    <h1 class="text-3xl hind-siliguri-regular font-semibold">নেক্সট Lesson এ যান</h1>
-                </div> -->
-
-
-
             </div>
         </section>
 
@@ -169,12 +153,8 @@
             </dialog>
         </section>
 
-        
-
-
-
         <!-- Frequently Asked Questions section -->
-        <section id="questionsSection" class="w-10/12 mx-auto pt-40 ">
+        <section id="questionsSection" class="w-10/12 -mt-20 mx-auto pt-40 ">
             <h1 class="text-4xl font-bold pb-20 text-center"><span class="text-[#00bcff]">Frequently</span> Asked
                 Questions</h1>
 
@@ -247,5 +227,4 @@
     <script src="script/index.js"></script>
     <script src="script/addapi.js"></script>
 </body>
-
 </html>
