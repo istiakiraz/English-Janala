@@ -97,15 +97,18 @@
 
             </div>
 
-            <div id="wordCardBox" class=" mt-8 mb-32 rounded-xl py-8  bg-[#F8F8F8] px-8 grid grid-cols-3 space-x-4 space-y-4 ">
+            <div id="spiner" class="spiner col-span-full mt-8 hidden ">
+                <span class="loading loading-ring loading-lg"></span>
+                <span class="loading loading-ring loading-lg"></span>
+                <span class="loading loading-ring loading-lg"></span>
+            </div>
 
-                <div id="spiner" class="spiner col-span-full hidden">
-                    <span class="loading loading-ring loading-lg"></span>
-                    <span class="loading loading-ring loading-lg"></span>
-                    <span class="loading loading-ring loading-lg"></span>
-                </div>
+            <div id="wordCardBox"
+                class=" mt-8 mb-32 rounded-xl py-8  bg-[#F8F8F8] px-8 grid grid-cols-3 space-x-4 space-y-4 ">
 
-                <div id="errorText" class="space-y-4 col-span-full">
+
+
+                <div class="space-y-4 col-span-full">
                     <p class="text-[#79716B] text-sm hind-siliguri-regular">আপনি এখনো কোন Lesson Select করেননি।</p>
                     <h1 class="text-3xl hind-siliguri-regular font-semibold">একটি Lesson Select করুন।</h1>
                 </div>
@@ -125,7 +128,7 @@
                     </div>
                 </div> -->
 
-                
+
 
                 <!-- <div class="space-y-4 col-span-full items-center flex flex-col ">
                     <img src="assets/alert-error.png" alt="">
@@ -133,10 +136,40 @@
                     <h1 class="text-3xl hind-siliguri-regular font-semibold">নেক্সট Lesson এ যান</h1>
                 </div> -->
 
-                
+
 
             </div>
         </section>
+
+        <!-- modal add -->
+
+        <section >
+            <dialog id="word_details" class="modal">
+
+                <div id="modal-details" class=" w-[42.938rem] mx-auto ">
+                    <div class="py-5 px-3 m-6 border-2 border-blue-100  rounded-xl">
+                        <h1 class="font-bold text-3xl mb-7 " >Eager (:ইগার)</h1>
+                        <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
+                        <p class="hind-siliguri-regular font-bold mb-7 " >আগ্রহী</p>
+                        <h4 class="font-bold text-xl mb-2">Example</h4>
+                        <p class="mb-7" >The kids were eager to open their gifts.</p>
+                        <h4 class="hind-siliguri-regular font-bold mb-2" >সমার্থক শব্দ গুলো</h4>
+                        <div>
+                            <button class="btn bg-[#EDF7FF] text-gray-500 ">Enthusiastic</button>
+                            <button class="btn bg-[#EDF7FF] text-gray-500">excited</button>
+                            <button class="btn bg-[#EDF7FF] text-gray-500">keen</button>
+                        </div>
+                    </div>
+                    <div>
+                        <form method="dialog">
+                            <button class="btn bg-[#422AD5] text-white mt-7 rounded-xl ">Complete Learning</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+
+        
 
 
 
@@ -211,7 +244,7 @@
         </section>
     </footer>
 
-    <script src="script/index.js"></script>
+    <!-- <script src="script/index.js"></script> -->
     <script src="script/addapi.js"></script>
 </body>
 

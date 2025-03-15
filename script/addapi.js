@@ -1,11 +1,11 @@
 const showLoader = ()=>{
 
     document.getElementById('spiner').classList.remove('hidden')
-    document.getElementById('errorText').classList.add('hidden') 
+    document.getElementById('wordCardBox').classList.add('hidden') 
 }
 const hideLoader = ()=>{
     document.getElementById('spiner').classList.add('hidden')
-    // document.getElementById('errorText').classList.remove('hidden') 
+    document.getElementById('wordCardBox').classList.remove('hidden') 
 }
 
 const loadButton = () => {
@@ -19,10 +19,56 @@ const loadButton = () => {
 
 const loadWord = (wordCard) => {
 
-    // showLoader()
+    showLoader()
     fetch(`https://openapi.programming-hero.com/api/level/${wordCard}`)
         .then(res => res.json())
         .then(data => displayWord(data.data))
+}
+
+const wordDetails = (wordId) =>{
+
+    fetch(`https://openapi.programming-hero.com/api/word/${wordId}`)
+    .then(res => res.json())
+    .then(data=> displayWordDetails(data.data))
+}
+
+
+
+const displayWordDetails = (wordDetails) =>{
+    // console.log(wordDetails.meaning.length);
+
+    
+    document.getElementById('word_details').showModal()
+
+    const detailsContainer= document.getElementById('modal-details')
+
+    detailsContainer.innerHTML =`
+    
+    <div id="modal-details" class="modal-box">
+                    <div class="py-5 px-3 border-2 border-blue-100  rounded-xl">
+                        <h1 class="font-bold text-3xl mb-7 " >${wordDetails.word} (:${wordDetails.pronunciation})</h1>
+                        <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
+                        <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning} </p>
+                        <h4 class="font-bold text-xl mb-2">Example</h4>
+                        <p class="mb-7" >${wordDetails.sentence}</p>
+                        <h4 class="hind-siliguri-regular font-bold mb-2" >সমার্থক শব্দ গুলো</h4>
+                        <div>
+                            <button class="btn bg-[#EDF7FF] text-gray-500 ">${wordDetails.synonyms[0]}</button>
+                            <button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[1]}</button>
+                            <button class="btn bg-[#EDF7FF] text-gray-500">${wordDetails.synonyms[2]}</button>
+                        </div>
+                    </div>
+                    <div>
+                        <form method="dialog">
+                            <button class="btn bg-[#422AD5] text-white mt-7 rounded-xl ">Complete Learning</button>
+                        </form>
+                    </div>
+                </div>
+    
+    `
+
+
+
 }
 
 
@@ -58,7 +104,7 @@ const displayWord = (words) => {
                     </div>
 
                     <div class="flex justify-between">
-                        <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl">
+                        <div onclick=wordDetails(${word.id}) class="p-3 w-10 h-10 bg-blue-100 rounded-xl">
                             <img src="assets/info.png" alt="info icon">
                         </div>
                         <div class="p-3 w-10 h-10 bg-blue-100 rounded-xl"><img src="assets/sound.png" alt="sound icon"></div>
