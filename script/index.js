@@ -58,7 +58,7 @@ document.getElementById('logout-btn').addEventListener("click", function (e) {
 document.getElementById('logout-btn2').addEventListener("click", function (e) {
     e.preventDefault()
 
-    document.getElementById('headerSection').style.display = "flex";
+    document.getElementById('headerSection').style.display = "block";
 
     document.getElementById('navbar').style.display = "none"
 
