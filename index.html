@@ -85,13 +85,16 @@
                 <div class="drawer drawer-end">
                     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content">
-                      <!-- Page content here -->
-                      <label for="my-drawer-4" class="drawer-button btn "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-10 text-[#3b25c1]">
+                      
+                      <label for="my-drawer-4" class="drawer-button  "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-12 text-[#3b25c1]">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg></label>
                     </div>
+
+                    <!-- mobile navbar -->
+
                     <div class="drawer-side">
                       <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
                       <ul class="menu bg-base-200 text-base-content min-h-full space-y-4  p-4">
@@ -119,7 +122,7 @@
     </section>
 
     <!-- header section -->
-    <header id="headerSection" class="w-10/12 mx-auto py-32 md:py-24 flex justify-between items-center">
+    <header id="headerSection" class="w-10/12 mx-auto py-4 md:py-24 flex md:justify-between flex-col-reverse md:flex-row items-center gap-10">
 
         <div class="space-y-6">
             <h1 class="font-bold text-5xl "><span class="text-[#00bcff] ">English</span> is Easy!!</h1>
@@ -139,12 +142,10 @@
     <main>
         <!-- Let's Learn Vocabularies section -->
 
-        <section id="learnSection" class="w-10/12 mx-auto text-center mt-20 pt-40 mb-52">
+        <section id="learnSection" class="md:w-10/12 mx-auto text-center mt-20 pt-40 mb-52">
             <h1 class="font-bold text-4xl text-center mb-4"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
             </h1>
-            <div id="learnBtn" class="space-x-3 mt-6 flex justify-center">
-
-                <!-- <button class="btn btn-outline btn-primary"><img src="assets/fa-book-open.png" alt="book-open"> Lesson -1</button> -->
+            <div id="learnBtn" class="mt-6 w-10/12 mx-auto flex flex-wrap gap-4 justify-center">
 
             </div>
 
@@ -155,24 +156,23 @@
             </div>
 
             <div id="wordCardBox"
-                class=" mt-8 mb-32 rounded-xl py-8  bg-[#F8F8F8] px-8 grid grid-cols-3 space-x-4 space-y-4 ">
+                class=" mt-8 mb-32 rounded-xl py-8 bg-[#F8F8F8] px-8 mx-auto flex flex-wrap lg:grid lg:grid-cols-3 gap-4 justify-center space-x-4 space-y-4 ">
 
-
-
-                <div class="space-y-4 col-span-full">
+                <div class="space-y-4 mx-auto md:col-span-full">
                     <p class="text-[#79716B] text-sm hind-siliguri-regular">আপনি এখনো কোন Lesson Select করেননি।</p>
                     <h1 class="text-3xl hind-siliguri-regular font-semibold">একটি Lesson Select করুন।</h1>
                 </div>
+
+                
             </div>
         </section>
 
         <!-- modal add -->
 
-        <section >
+        <section>
             <dialog id="word_details" class="modal">
-
-                <div id="modal-details" class=" w-[45rem] mx-auto ">
-                    <div class="py-5 px-3 m-6 border-2 border-blue-100  rounded-xl">
+                <div id="modal-details" class=" md:w-[45rem] w-[28rem] ">
+                    <div class="py-5 px-3 md:m-6 border-2 border-blue-100  rounded-xl">
                         <h1 class="font-bold text-3xl mb-7 " >Eager (:ইগার)</h1>
                         <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
                         <p class="hind-siliguri-regular font-bold mb-7 " >আগ্রহী</p>
@@ -191,6 +191,8 @@
                         </form>
                     </div>
                 </div>
+               
+
             </dialog>
         </section>
 
@@ -230,10 +232,9 @@
         </section>
 
     </main>
-<!-- my pc -->
 
-    <footer id="footerSection" class="border-t-2 mt-14 border-red-200 ">
-        <section class="w-10/12 mx-auto py-20 flex justify-between items-end">
+    <footer id="footerSection" class="border-t-2  mt-14 border-red-200 ">
+        <section class="w-10/12 mx-auto md:py-20 py-10 flex flex-col md:flex-row space-y-10  justify-between md:items-end">
             <div class="space-y-3">
                 <div class="flex items-center">
                     <h2 class="poppins-regular font-semibold">English</h2>
@@ -265,3 +266,5 @@
     <script src="script/addapi.js"></script>
 </body>
 </html>
+
+<!-- // -->

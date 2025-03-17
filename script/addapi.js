@@ -58,7 +58,7 @@ const displayWordDetails = (wordDetails) => {
     detailsContainer.innerHTML = `
     
     <div id="modal-details" class="modal-box">
-                    <div class="py-5 px-3 border-2 border-blue-100  rounded-xl">
+                    <div class="py-5 px-3 border-2 border-blue-100 rounded-xl">
                         <h1 class="font-bold text-3xl mb-7 flex items-center whitespace-nowrap " >${wordDetails.word} (<img class="size-8" src="assets/mic.png" alt="mic logo">:${wordDetails.pronunciation})</h1>
                         <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
                         <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning == null ? `অর্থ পাওয়া যায়নি` : `${wordDetails.meaning}`} </p>
@@ -87,7 +87,7 @@ const displayWord = (words) => {
 
     if (words.length === 0) {
         wordBox.innerHTML = `
-            <div class="space-y-4 col-span-full items-center flex flex-col ">
+            <div class="space-y-4 col-span-full items-center mx-auto flex flex-col ">
                         <img src="assets/alert-error.png" alt="">
                         <p class="text-[#79716B] text-sm hind-siliguri-regular">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
                         <h1 class="text-3xl hind-siliguri-regular font-semibold">নেক্সট Lesson এ যান</h1>
@@ -104,7 +104,7 @@ const displayWord = (words) => {
 
         wordDiv.innerHTML = `
         
-        <div class="p-16 bg-white rounded-xl space-y-8 h-[20rem]">
+        <div class="p-16 bg-white rounded-xl space-y-8 ">
                     <div class="space-y-3">
                         <h1 class="font-bold text-2xl">${word.word}</h1>
                         <p class="text-xl">Meaning /Pronunciation</p>
