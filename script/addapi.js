@@ -59,7 +59,7 @@ const displayWordDetails = (wordDetails) => {
     
     <div id="modal-details" class="modal-box">
                     <div class="py-5 px-3 border-2 border-blue-100 rounded-xl">
-                        <h1 class="font-bold text-3xl mb-7 flex items-center whitespace-nowrap " >${wordDetails.word} (<img class="size-8" src="assets/mic.png" alt="mic logo">:${wordDetails.pronunciation})</h1>
+                        <h1 class="font-bold md:text-2xl text-xl mb-7 flex items-center whitespace-nowrap " >${wordDetails.word} (<img class="size-8" src="assets/mic.png" alt="mic logo">:${wordDetails.pronunciation})</h1>
                         <h4 class="font-bold text-xl mb-2 " >Meaning</h4>
                         <p class="hind-siliguri-regular font-bold mb-7 " >${wordDetails.meaning == null ? `অর্থ পাওয়া যায়নি` : `${wordDetails.meaning}`} </p>
                         <h4 class="font-bold text-xl mb-2">Example</h4>
