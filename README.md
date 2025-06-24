@@ -24,13 +24,6 @@
 
 ---
 
-## 📸 Screenshots
-
-*(Optional: Add a screenshot here if you want. Example below)*
-
-![English Janala Screenshot](screenshot.png)
-
----
 
 ## 📂 How to Use
 
